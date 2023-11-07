@@ -115,7 +115,7 @@ function save() {
     var prediction = model.predict(tensor);
     var pIndex = tf.argMax(prediction, 1).dataSync();
     
-    var classNames = ["人", "工", "智", "慧"];
+    var classNames = ["正常", "鏡面字", "缺少筆畫",];
             
             
     alert(classNames[pIndex]);

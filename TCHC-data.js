@@ -25,7 +25,7 @@ const NUM_TRAIN_ELEMENTS = Math.floor(TRAIN_TEST_RATIO * NUM_DATASET_ELEMENTS);
 const NUM_TEST_ELEMENTS = NUM_DATASET_ELEMENTS - NUM_TRAIN_ELEMENTS;
 
 const MNIST_IMAGES_SPRITE_PATH =
-    './character_data_8bytes.png';
+    './combined_flattened_images.png';
 const MNIST_LABELS_PATH =
     './labels.txt';
 
