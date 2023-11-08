@@ -16,18 +16,25 @@ function getModel() {
     model = tf.sequential();
     
     // YOUR CODE HERE
-    model.add(tf.layers.conv2d({inputShape: [50, 50, 1], kernelSize: 2, filters: 5, activation: 'relu'}));
+    model.add(tf.layers.conv2d({inputShape: [50, 50, 1], kernelSize: 5, filters: 12, activation: 'relu'}));
+    model.add(tf.layers.conv2d({kernelSize: 3, filters: 18, activation: 'relu'}));
     model.add(tf.layers.maxPooling2d({poolSize: [2, 2]}));
+
+    model.add(tf.layers.conv2d({kernelSize: 3, filters: 12, activation: 'relu'}));
+    model.add(tf.layers.conv2d({kernelSize: 3, filters: 6, activation: 'relu'}));
+    model.add(tf.layers.maxPooling2d({poolSize: [2, 2]}));
+
     model.add(tf.layers.flatten());
     model.add(tf.layers.dropout({rate: 0.5}));
-    model.add(tf.layers.dense({units: 512, activation: 'relu'}));
-    model.add(tf.layers.dropout({rate: 0.5}));
+    model.add(tf.layers.dense({units: 128, activation: 'relu'}));
+    // model.add(tf.layers.dense({units: 64, activation: 'relu'}));
+    // model.add(tf.layers.dropout({rate: 0.4}));
     model.add(tf.layers.dense({units: 4, activation: 'softmax'}));
 
     
     // Compile the model using the categoricalCrossentropy loss,
     // the tf.train.adam() optimizer, and accuracy for your metrics.
-    model.compile({optimizer: tf.train.adam(), loss: 'categoricalCrossentropy', metrics: ['accuracy']}); // YOUR CODE HERE);
+    model.compile({optimizer: tf.train.adam(0.001), loss: 'categoricalCrossentropy', metrics: ['accuracy']}); // YOUR CODE HERE);
     
     return model;
 }
