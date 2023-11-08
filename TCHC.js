@@ -48,7 +48,7 @@ async function train(model, data) {
     const fitCallbacks = tfvis.show.fitCallbacks(container, metrics); // YOUR CODE HERE
     
     const BATCH_SIZE = 12;
-    const TRAIN_DATA_SIZE = 180;
+    const TRAIN_DATA_SIZE = 300;
     const TEST_DATA_SIZE = 24;
     
     // Get the training batches and resize them. Remember to put your code
@@ -115,7 +115,7 @@ function save() {
     var prediction = model.predict(tensor);
     var pIndex = tf.argMax(prediction, 1).dataSync();
     
-    var classNames = ["正常", "鏡面字", "缺少筆畫",];
+    var classNames = ["正常", "鏡面字", "缺少筆畫","缺少筆畫"];
             
             
     alert(classNames[pIndex]);

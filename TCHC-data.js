@@ -17,7 +17,7 @@
 
 const IMAGE_SIZE = 2500;
 const NUM_CLASSES = 4;
-const NUM_DATASET_ELEMENTS = 204;
+const NUM_DATASET_ELEMENTS = 200;
 
 const TRAIN_TEST_RATIO = 16 / 17;
 
@@ -56,7 +56,7 @@ export class FMnistData {
         const datasetBytesBuffer =
             new ArrayBuffer(NUM_DATASET_ELEMENTS * IMAGE_SIZE * 4);
 
-        const chunkSize = 204;
+        const chunkSize = 200;
         canvas.width = img.width;
         canvas.height = chunkSize;
 

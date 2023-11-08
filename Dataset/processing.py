@@ -9,7 +9,7 @@ model = Sequential()
 model.add(Flatten(input_shape=(50, 50)))  # Adjust input_shape to match your image dimensions
 
 # Define the number of images
-num_images = 60
+num_images = 200
 
 # Create a directory to save flattened images
 if not os.path.exists('flattened_images'):
@@ -17,7 +17,7 @@ if not os.path.exists('flattened_images'):
 
 # Loop through images and flatten them
 for i in range(1, num_images + 1):
-    image_path = f'you_dataset-{i:02d}.png'  # Assuming your image files are named like "your_dataset-01.png", "your_dataset-02.png", etc.
+    image_path = f'Hand_Written_Dataset-{i:02d}.png'  # Assuming your image files are named like "your_dataset-01.png", "your_dataset-02.png", etc.
     image = Image.open(image_path)
     image_array = np.array(image)
 
