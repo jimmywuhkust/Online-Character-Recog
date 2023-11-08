@@ -34,7 +34,7 @@ function getModel() {
     
     // Compile the model using the categoricalCrossentropy loss,
     // the tf.train.adam() optimizer, and accuracy for your metrics.
-    model.compile({optimizer: tf.train.adam(0.001), loss: 'categoricalCrossentropy', metrics: ['accuracy']}); // YOUR CODE HERE);
+    model.compile({optimizer: tf.train.adam(0.0008), loss: 'categoricalCrossentropy', metrics: ['accuracy']}); // YOUR CODE HERE);
     
     return model;
 }
@@ -54,7 +54,7 @@ async function train(model, data) {
     // Use the container and metrics defined above as the parameters.
     const fitCallbacks = tfvis.show.fitCallbacks(container, metrics); // YOUR CODE HERE
     
-    const BATCH_SIZE = 24;
+    const BATCH_SIZE = 48;
     const TRAIN_DATA_SIZE = 300;
     const TEST_DATA_SIZE = 24;
     
